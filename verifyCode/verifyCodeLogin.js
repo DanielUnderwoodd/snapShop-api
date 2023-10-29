@@ -102,11 +102,10 @@ const verifyCodeLogin = (
         );
 
         res.cookie(cookieName, token, {
-                      httpOnly: true,
+          httpOnly: true,
+          maxAge: 24 * 7 * 60 * 60 * 4 * 12,
         });
 
-
-   
         res.status(200).json(body);
       } else {
         console.log("data in mongodb hasn't modified");

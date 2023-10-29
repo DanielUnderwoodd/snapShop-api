@@ -1,0 +1,6 @@
+runtime: nodejs18
+env_variables:
+  REDIS_URL: redis://default:peJnJXXemp31OfXH1kyXKvV9rnjtM94g@redis-17303.c258.us-east-1-4.ec2.cloud.redislabs.com:17303
+  MONGO_URL: mongodb+srv://farzidaniel16:w0ix8lkl3DlMnQio@cluster0.bozl6op.mongodb.net/test
+  PORT: 4000
+  NODEMAILER_PASSWORD: wegj mjac yujn jiix

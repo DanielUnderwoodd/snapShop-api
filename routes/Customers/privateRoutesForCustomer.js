@@ -87,7 +87,7 @@ module.exports = (Customers, sessionCustomers, client, jwt) => {
         lat: req.body.lat,
         lng: req.body.lng,
       };
-
+      console.log(req.user.customer._id);
       let query = {
         _id: req.user.customer._id,
         "address.lat": address.lat,
@@ -108,7 +108,9 @@ module.exports = (Customers, sessionCustomers, client, jwt) => {
           return res.status(500).json("You just can add 8 addresses");
         }
         let addAddressResponse = await Customers.findOneAndUpdate(
-          query._id,
+          {
+            _id: query._id,
+          },
           {
             $push: {
               address,

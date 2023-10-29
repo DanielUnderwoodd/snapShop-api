@@ -5,7 +5,7 @@ const userValidationRules = () => {
       .notEmpty()
       .withMessage("Enter your first name")
       .matches(/^[ \u0600-\u06FF A-Za-z0-9 ][ \u0600-\u06FF A-Za-z0-9 ]+$/i)
-      .withMessage("Usa a correct form"),
+      .withMessage("first name: Usa a correct form"),
     body("phoneNumber")
       .notEmpty()
       .withMessage("Enter a phone number")
@@ -15,7 +15,7 @@ const userValidationRules = () => {
       .notEmpty()
       .withMessage("Enter your last name")
       .matches(/^[ \u0600-\u06FF A-Za-z0-9 ][ \u0600-\u06FF A-Za-z0-9 ]+$/i)
-      .withMessage("Use a correct form"),
+      .withMessage("last name: Use a correct form"),
   ];
 };
 
