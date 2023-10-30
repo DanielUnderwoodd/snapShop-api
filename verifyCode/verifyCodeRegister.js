@@ -78,7 +78,11 @@ const verifyCodeRegister = (
             },
             secretOrKey
           );
-          res.cookie(cookieName, token, { httpOnly: true });
+          res.cookie(cookieName, token, {
+            httpOnly: true,
+            maxAge: 24 * 7 * 60 * 60 * 4 * 12,
+            path: "/",
+          });
           res.status(200).json(body);
         }
       } catch (err) {
