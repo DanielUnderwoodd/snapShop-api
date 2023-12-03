@@ -21,7 +21,7 @@ const cors = require("cors");
 
 app.use(
   cors({
-    origin: "http://localhost:4002",
+    origin: "https://netbest.tk",
     credentials: true,
   })
 );
@@ -86,7 +86,6 @@ var unauthorizedAdmin = (req, res, next) => {
     next();
   }
 };
-
 
 app.use("/api/admin/pb", unauthorizedAdmin, publicRoutesForAdmin);
 
