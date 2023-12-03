@@ -1,11 +1,11 @@
-const { codeValidationRules } = require('./code');
-const { validationResult } = require('express-validator');
+const { codeValidationRules } = require("./code");
+const { validationResult } = require("express-validator");
 
-describe('codeValidationRules', () => {
-  it('should pass validation for a valid code', async () => {
+describe("codeValidationRules", () => {
+  it("should pass validation for a valid code", async () => {
     const req = {
       body: {
-        code: '12345', // Valid code with 5 characters
+        code: "12345", // Valid code with 5 characters
       },
     };
     const validationRules = codeValidationRules();
@@ -17,10 +17,10 @@ describe('codeValidationRules', () => {
     expect(errors.isEmpty()).toBe(true);
   });
 
-  it('should fail validation for an empty code', async () => {
+  it("should fail validation for an empty code", async () => {
     const req = {
       body: {
-        code: '', // Empty code
+        code: "", // Empty code
       },
     };
 
@@ -31,13 +31,13 @@ describe('codeValidationRules', () => {
     const errors = validationResult(req);
     expect(errors.isEmpty()).toBe(false);
     expect(errors.array()).toHaveLength(2);
-    expect(errors.array()[0].msg).toBe('Enter your verification code');
+    expect(errors.array()[0].msg).toBe("Enter your verification code");
   });
 
-  it('should fail validation for a code with length other than 5', async() => {
+  it("should fail validation for a code with length other than 5", async () => {
     const req = {
       body: {
-        code: '123', // Code with length other than 5
+        code: "123", // Code with length other than 5
       },
     };
 
@@ -49,6 +49,6 @@ describe('codeValidationRules', () => {
     const errors = validationResult(req);
     expect(errors.isEmpty()).toBe(false);
     expect(errors.array()).toHaveLength(1);
-    expect(errors.array()[0].msg).toBe('code must be in 5 digit range');
+    expect(errors.array()[0].msg).toBe("code must be in 5 digit range");
   });
 });

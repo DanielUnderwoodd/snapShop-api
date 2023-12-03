@@ -35,5 +35,9 @@
     "request": "^2.88.2",
     "socket.io": "^4.0.0",
     "uniqid": "^5.2.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.3"
   }
 }

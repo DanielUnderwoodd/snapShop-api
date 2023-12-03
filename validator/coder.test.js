@@ -1,11 +1,11 @@
-const { coderValidationRules } = require('./coder');
-const { validationResult } = require('express-validator');
+const { coderValidationRules } = require("./coder");
+const { validationResult } = require("express-validator");
 
-describe('coderValidationRules', () => {
-  it('should pass validation for a valid phone number', async () => {
+describe("coderValidationRules", () => {
+  it("should pass validation for a email", async () => {
     const req = {
       body: {
-        phoneNumber: '123456789', // Valid phone number without zero
+        email: "john.doe@example.com", // Valid phone number without zero
       },
     };
     const validationRules = coderValidationRules();
@@ -17,10 +17,10 @@ describe('coderValidationRules', () => {
     expect(errors.isEmpty()).toBe(true);
   });
 
-  it('should fail validation for an empty phone number', async () => {
+  it("should fail validation for an invalid email", async () => {
     const req = {
       body: {
-        phoneNumber: '', // Empty phone number
+        email: "invalid-email", // invalid email
       },
     };
 
@@ -28,27 +28,9 @@ describe('coderValidationRules', () => {
     for (const rule of validationRules) {
       await rule(req, {}, () => {});
     }
-    const errors = validationResult(req);
-    expect(errors.isEmpty()).toBe(false);
-    expect(errors.array()).toHaveLength(2);
-    expect(errors.array()[0].msg).toBe('Enter your phone Number without zero');
-  });
-
-  it('should fail validation for a phone number with length other than 9', async() => {
-    const req = {
-      body: {
-        phoneNumber: '1234567890', // Phone number with length other than 9
-      },
-    };
-
-    const validationRules = coderValidationRules();
-    for (const rule of validationRules) {
-      await rule(req, {}, () => {});
-    }
-
     const errors = validationResult(req);
     expect(errors.isEmpty()).toBe(false);
     expect(errors.array()).toHaveLength(1);
-    expect(errors.array()[0].msg).toBe('Only finnish phone number is allowed');
+    expect(errors.array()[0].msg).toBe("Enter Valid email address");
   });
 });
