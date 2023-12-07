@@ -17,11 +17,11 @@ const authJwt = require("./config/authJwt");
 const rateLimit = require("./config/rateLimit");
 const cors = require("cors");
 
-//https://netbest.tk
+//https://netbest.online
 
 app.use(
   cors({
-    origin: "https://netbest.tk",
+    origin: "https://netbest.online",
     credentials: true,
   })
 );
