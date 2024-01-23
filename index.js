@@ -21,7 +21,7 @@ const cors = require("cors");
 
 app.use(
   cors({
-    origin: "https://www.netbest.online",
+    origin: "https://www.dgvr.ir",
     credentials: true,
   })
 );
