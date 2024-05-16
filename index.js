@@ -23,8 +23,7 @@ const cors = require("cors");
 
 app.use(
   cors({
-    origin: "https://www.danielportfolio.shop"
-DNS configuration instructions",
+    origin: "https://www.danielportfolio.shop",
     credentials: true,
   })
 );
