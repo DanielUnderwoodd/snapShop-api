@@ -23,7 +23,8 @@ const cors = require("cors");
 
 app.use(
   cors({
-    origin: "https://www.dgvr.ir",
+    origin: "https://www.danielportfolio.shop"
+DNS configuration instructions",
     credentials: true,
   })
 );
